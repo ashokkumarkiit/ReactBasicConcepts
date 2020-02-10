@@ -9,24 +9,24 @@ function App() {
     <div>
       <div className="ui container comments">
         <ApprovalCard>
-          <CommentDetail 
-            author="Ashok Kumar"
+          <CommentDetail
+            author="User 1"
             timestamp="Today at 6:30PM"
-            message="Hello, How are you all?"  
+            message="Hello, How are you all?"
           />
         </ApprovalCard>
         <ApprovalCard>
-          <CommentDetail 
-            author="Shampa Paul"
+          <CommentDetail
+            author="User 2"
             timestamp="Yesterday at 8:30PM"
-            message="I am good What about you?"  
+            message="I am good What about you?"
           />
         </ApprovalCard>
         <ApprovalCard>
-          <CommentDetail 
-            author="Ashok Kumar"
+          <CommentDetail
+            author="User 1"
             timestamp="Today at 9:30AM"
-            message="All good on my side. Thanks for Asking."  
+            message="All good on my side. Thanks for Asking."
           />
         </ApprovalCard>
       </div>
