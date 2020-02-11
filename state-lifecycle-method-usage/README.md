@@ -42,4 +42,4 @@
     - componentDidUpdate
         Wait until the components has been updated. A state change can trigger componentDidUpdate
     - componentWillUnmount
-        Wait until the component is no longer shown.
+        Wait until the component is no longer shown and used for cleanups.
