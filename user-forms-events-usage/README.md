@@ -60,3 +60,38 @@
 
           console.log(response);
         }
+
+## React Ref - Used for setting client Image height that make the grid looks consistent.
+  React Ref is mainly used to interact with the DOM elements inside react components.
+  Example -
+    - Define in constructor
+
+      this.imageRef = React.createRef();
+
+    - Add it to img element
+
+        <img
+          ref={this.imageRef}
+          alt={description}
+          src={urls.regular}
+        />
+    - Fetch the client height when the image has been loaded in componentDidMount and set it   to state for providing heights in terms of spans
+
+        componentDidMount(){
+          this.imageRef.current.addEventListener('load',this.setSpans);
+        }
+
+        setSpans = () => {
+          const height = this.imageRef.current.clientHeight;
+          const spans = Math.ceil(height/10);
+          this.setState({spans});
+        }
+
+    - Once the span value is set to state, provide inline style to the container div of the image.
+
+      <div style={{gridRowEnd:`span ${this.state.spans}`}}>
+        <img
+          ref={this.imageRef}
+          ...
+        />
+      </div>
