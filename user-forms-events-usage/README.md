@@ -1,3 +1,11 @@
+### Make Project Running
+  - Create an Account on "https://unsplash.com/developers"
+  - Go To "Your App" section and create an Application.
+  - Check all the chekcboxes and proceed.
+  - Once App is created, you can use the "Access Key".
+  - Copy and paste access key in "/src/api/unsplash.js".
+  - Then follow the normal installation using npm install and npm strat to run the application.
+
 ### Learnings
 
 ## Input OnChange() -  
