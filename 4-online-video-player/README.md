@@ -17,7 +17,7 @@
 
     //De-structuring props what needs to be used inside.
     const VideoItem = ({ video, onVideoSelect }) => {
-      ...
+      ....
     }
 
 ## Calling a callback function with params
