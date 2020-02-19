@@ -15,9 +15,10 @@
 
   In place of default export we will use named export form action creator as the action creator might have multiple exports.
   ex:-
+
       ```
       export const fun_name = () => {
-
+        ....
       };
       ```
 ## imports :
