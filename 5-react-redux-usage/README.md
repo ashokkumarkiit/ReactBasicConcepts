@@ -22,11 +22,11 @@
 
 ## imports :
 
-  When export default is used, at the time of import we do not need {} like below
+  - When export default is used, at the time of import we do not need {} like below
 
     import fun_name from '../actions';
 
-  But when named export is used, we must used braces i.e. {}
+  - But when named export is used, we must used braces i.e. {}
 
     import { fun_name } from '../actions';
 
@@ -42,7 +42,7 @@
           <App />
         </Provider>,
         document.querySelector(#root)
-        );
+      );
 
 ## Connect
 
@@ -50,7 +50,7 @@
   - It makes all the data and methods available as props inside a component using method "mapStateToProps"(Function name could be anything).
 
 ## Structure of connect()()
-  Two braces signify that it is returning a function inside a function as shown below:
+  - Two braces signify that it is returning a function inside a function as shown below:
 
     function connect() {
       return function() {
@@ -58,5 +58,5 @@
       }
     }
 
-  If we do connect() - It does not print anything as it is returning a function.
-  If we do connect()() - It will show 'Inside' as we accessed the returned function using another braces.
+  - If we do connect() - It does not print anything as it is returning a function.
+  - If we do connect()() - It will show 'Inside' as we accessed the returned function using another braces.
