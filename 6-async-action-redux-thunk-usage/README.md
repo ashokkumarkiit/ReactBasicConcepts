@@ -13,6 +13,7 @@
   - Redux Thunk - Allows to return a function from an action creator and redux thunk internally calls that function automatically with dispatch and getState arguments.
   - With this options, we have power to change or modify or read any data.
   - With Redux Thunk we can use Async Await.
+
   ![Redux Thunk](Redux-Thunk.png)
 
 ##  Data Loading with Redux - Application Flow
