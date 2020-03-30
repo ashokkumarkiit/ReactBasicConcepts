@@ -11,10 +11,22 @@
   - It can Modify, Stop, etc to actions.
   - Mostly Middleware generally used for handling async actions.
   - Redux Thunk - Allows to return a function from an action creator and redux thunk internally calls that function automatically with dispatch and getState arguments.
-  - With this options, we have power to change or modify or read any data.
+  - With this options, we have power to change or modify or read any data. Means, using "dispatch" we can change any data and through "getState" we can read/access any data we want. 
   - With Redux Thunk we can use Async Await.
 
   ![Redux Thunk](Redux-Thunk.png)
+
+  - For wiring the middleware we need to write below snippet in srs/index.js:
+  ```
+    const store = createStore(reducers, applyMiddleware(thunk));
+
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      document.querySelector('#root')
+    );
+  ```
 
 ##  Data Loading with Redux - Application Flow
 
@@ -47,11 +59,32 @@
     }
 
   ```
+  - Note: We can use promise to handle this issue but it will also not work.
+
+  ```
+    ***** Promise is not the data. It is just something that notifies when data is available for access post API call.
+    ***** For the same reason we use ".then()" with promise when the data is available for access.
+    export const fetchPosts = () => {
+
+      const promise = await jsonPlaceholder.get('/posts');
+
+      return({
+        type: 'FETCH_POSTS',
+        payload: promise
+      });
+    }
+  ```
+  - The above resolution using promise is also not acceptable. Because till the data is received from the API, the actions would have been already processed by the reducers and we wont received any data as the request was incomplete. So for the same reason we use Async action creators. And to use Async action creators we have to use middleware.
 
 ## Action Creators -
 
   - Synchronous action creator - Instantly runs and returns data without any delay.
   - Asynchronous action creator - Require some time to complete the API request and once the data is available, it returns the data.
+
+  ***** Action Creator Functionality
+  - Action creator always returns action object.
+  - Action must have a type property.
+  - Action can optionally have a 'payload'.
 
 ## Rules for Reducers -
 
